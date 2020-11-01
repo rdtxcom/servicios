@@ -60,7 +60,7 @@ class EditServicioATOp extends EditController
     protected function createViews()
     {
         parent::createViews();
-        $this->setTabsPosition('top');
+        $this->setTabsPosition('bottom');
         $this->createViewsWorks();
     }
 
