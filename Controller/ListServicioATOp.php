@@ -37,7 +37,7 @@ class ListServicioATOp extends ListController
         $data = parent::getPageData();
         $data['menu'] = 'sales';
         $data['submenu'] = 'services';
-        $data['title'] = 'opererator_services';
+        $data['title'] = 'operator_services';
         $data['icon'] = 'fas fa-headset';
 
         return $data;
