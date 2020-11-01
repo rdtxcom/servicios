@@ -21,11 +21,11 @@ namespace FacturaScripts\Plugins\Servicios\Controller;
 use FacturaScripts\Core\Lib\ExtendedController\ListController;
 
 /**
- * Description of ListServicioAT
+ * Description of ListServicioATOp
  *
  * @author Carlos Garcia Gomez <carlos@facturascripts.com>
  */
-class ListServicioAT extends ListController
+class ListServicioATOp extends ListController
 {
 
     /**
@@ -37,7 +37,7 @@ class ListServicioAT extends ListController
         $data = parent::getPageData();
         $data['menu'] = 'sales';
         $data['submenu'] = 'services';
-        $data['title'] = 'services';
+        $data['title'] = 'opererator_services';
         $data['icon'] = 'fas fa-headset';
 
         return $data;
@@ -47,8 +47,6 @@ class ListServicioAT extends ListController
     {
         $this->createViewsServices();
         $this->createViewsMachines();
-        $this->createViewsStatus();
-        $this->createViewsPriority();
     }
 
     /**
@@ -76,9 +74,9 @@ class ListServicioAT extends ListController
      * 
      * @param string $viewName
      */
-    protected function createViewsServices(string $viewName = 'ListServicioAT')
+    protected function createViewsServices(string $viewName = 'ListServicioATOp')
     {
-        $this->addView($viewName, 'ServicioAT', 'services', 'fas fa-headset');
+        $this->addView($viewName, 'ServicioATOp', 'services', 'fas fa-headset');
         $this->addOrderBy($viewName, ['fecha', 'hora'], 'date', 2);
         $this->addOrderBy($viewName, ['idprioridad'], 'priority');
         $this->addOrderBy($viewName, ['idservicio'], 'code');
@@ -100,19 +98,4 @@ class ListServicioAT extends ListController
      * 
      * @param string $viewName
      */
-    protected function createViewsStatus(string $viewName = 'ListEstadoAT')
-    {
-        $this->addView($viewName, 'EstadoAT', 'states', 'fas fa-tags');
-        $this->addOrderBy($viewName, ['nombre'], 'name', 1);
-    }
-    
-    /**
-     * 
-     * @param string $viewName
-     */
-    protected function createViewsPriority(string $viewName = 'ListPrioridadAT')
-    {
-        $this->addView($viewName, 'PrioridadAT', 'priority', 'fas fa-tags');
-        $this->addOrderBy($viewName, ['nombre'], 'name', 1);
-    }
 }
