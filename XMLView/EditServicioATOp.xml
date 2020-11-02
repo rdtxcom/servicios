@@ -32,10 +32,10 @@
                 </widget>
             </column>
             <column name="date" numcolumns="2" order="120">
-                <widget type="date" fieldname="fecha" required="true" />
+                <widget type="date" fieldname="fecha" readonly="true" />
             </column>
             <column name="hour" numcolumns="2" order="130">
-                <widget type="time" fieldname="hora" required="true" />
+                <widget type="time" fieldname="hora" readonly="true"  />
             </column>
             <column name="status" numcolumns="2" order="140">
                 <widget type="select" fieldname="idestado" required="true">
@@ -43,7 +43,7 @@
                 </widget>
             </column>
             <column name="priority" numcolumns="2" order="150">
-                <widget type="select" fieldname="idprioridad" required="true" >
+                <widget type="select" fieldname="idprioridad" readonly="true" >
                     <values source="serviciosat_prioridades" fieldcode="id" fieldtitle="nombre" />
                 </widget>
             </column>
@@ -70,10 +70,10 @@
         </group>
         <group name="notes" numcolumns="12">
             <column name="description" order="100">
-                <widget type="textarea" fieldname="descripcion"/>
+                <widget type="textarea" fieldname="descripcion" readonly="true" />
             </column>
             <column name="observations" order="110">
-                <widget type="textarea" fieldname="observaciones" />
+                <widget type="textarea" fieldname="observaciones"/>
             </column>
         </group>
     </columns>
