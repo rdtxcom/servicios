@@ -89,7 +89,7 @@ class ListServicioATOp extends ListController
         $this->addFilterSelect($viewName, 'idprioridad', 'priority', 'idprioridad', $priority);
         $status = $this->codeModel->all('serviciosat_estados', 'id', 'nombre');
         $this->addFilterSelect($viewName, 'idestado', 'status', 'idestado', $status);
-
+        
         $agents = $this->codeModel->all('agentes', 'codagente', 'nombre');
         $this->addFilterSelect($viewName, 'codagente', 'agent', 'codagente', $agents);
     }
