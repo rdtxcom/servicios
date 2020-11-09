@@ -64,12 +64,12 @@
                 <values source="serviciosat_estados" fieldcode="id" fieldtitle="nombre" />
             </widget>
         </column>
-        <column name="priority" display="right" order="190">
+        <column name="priority" display="right" order="200">
             <widget type="select" fieldname="idprioridad">
                 <values source="serviciosat_prioridades" fieldcode="id" fieldtitle="nombre" />
             </widget>
         </column>
-        <column name="date" display="right" order="200">
+        <column name="date" display="right" order="210">
             <widget type="date" fieldname="fecha" />
         </column>
     </columns>

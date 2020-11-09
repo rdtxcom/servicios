@@ -54,22 +54,22 @@
                 <values source="users" fieldcode="nick" fieldtitle="nick" />
             </widget>
         </column>
-        <column name="agent" order="170">
+        <column name="agent" order="180">
             <widget type="select" fieldname="codagente">
                 <values source="agentes" fieldcode="codagente" fieldtitle="nombre" />
             </widget>
         </column>
-        <column name="status" order="180">
+        <column name="status" order="190">
             <widget type="select" fieldname="idestado">
                 <values source="serviciosat_estados" fieldcode="id" fieldtitle="nombre" />
             </widget>
         </column>
-        <column name="priority" display="right" order="190">
+        <column name="priority" display="right" order="200">
             <widget type="select" fieldname="idprioridad">
                 <values source="serviciosat_prioridades" fieldcode="id" fieldtitle="nombre" />
             </widget>
         </column>
-        <column name="date" display="right" order="200">
+        <column name="date" display="right" order="210">
             <widget type="date" fieldname="fecha" />
         </column>
     </columns>
