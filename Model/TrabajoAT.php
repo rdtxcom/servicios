@@ -126,7 +126,7 @@ class TrabajoAT extends Base\ModelOnChangeClass
     {
         parent::clear();
         $this->cantidad = 1.0;
-        $this->estado = self::STATUS_MAKE_INVOICE;
+        $this->estado = self::STATUS_NONE;
         $this->fechainicio = \date(self::DATE_STYLE);
         $this->horainicio = \date(self::HOUR_STYLE);
         $this->precio = 0.0;
