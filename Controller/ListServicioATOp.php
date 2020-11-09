@@ -19,6 +19,7 @@
 namespace FacturaScripts\Plugins\Servicios\Controller;
 
 use FacturaScripts\Core\Lib\ExtendedController\ListController;
+use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 
 /**
  * Description of ListServicioATOp
@@ -92,6 +93,12 @@ class ListServicioATOp extends ListController
         
         $agents = $this->codeModel->all('agentes', 'codagente', 'nombre');
         $this->addFilterSelect($viewName, 'codagente', 'agent', 'codagente', $agents);
+        
+        $users = [
+            ['label' => $this->toolBox()->i18n()->trans('user-active'), 'where' => [new DataBaseWhere('nick', $this->user->nick)]],
+            ['label' => $this->toolBox()->i18n()->trans('all'), 'where' => []]
+          ];
+           $this->addFilterSelectWhere($viewName, 'status', $users);
     }
 
     /**
