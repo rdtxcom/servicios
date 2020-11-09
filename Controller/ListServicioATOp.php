@@ -86,10 +86,9 @@ class ListServicioATOp extends ListController
         /// filters
         $this->addFilterPeriod($viewName, 'fecha', 'date', 'fecha');
         $this->addFilterAutocomplete($viewName, 'codcliente', 'customer', 'codcliente', 'clientes', 'codcliente', 'nombre');
+        
         $priority = $this->codeModel->all('serviciosat_prioridades', 'id', 'nombre');
         $this->addFilterSelect($viewName, 'idprioridad', 'priority', 'idprioridad', $priority);
-        $status = $this->codeModel->all('serviciosat_estados', 'id', 'nombre');
-        $this->addFilterSelect($viewName, 'idestado', 'status', 'idestado', $status);
         
         $agents = $this->codeModel->all('agentes', 'codagente', 'nombre');
         $this->addFilterSelect($viewName, 'codagente', 'agent', 'codagente', $agents);
@@ -98,7 +97,13 @@ class ListServicioATOp extends ListController
             ['label' => $this->toolBox()->i18n()->trans('user-active'), 'where' => [new DataBaseWhere('nick', $this->user->nick)]],
             ['label' => $this->toolBox()->i18n()->trans('all'), 'where' => []]
           ];
-           $this->addFilterSelectWhere($viewName, 'status', $users);
+        $this->addFilterSelectWhere($viewName, 'users', $users);
+        
+        $status = [
+            ['label' => $this->toolBox()->i18n()->trans('Pendiente'), 'where' => [new DataBaseWhere('idestado', '1')]],
+            ['label' => $this->toolBox()->i18n()->trans('all'), 'where' => []]
+          ];
+           $this->addFilterSelectWhere($viewName, 'status', $status);
     }
 
     /**
